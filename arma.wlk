@@ -3,20 +3,20 @@ class Arma{
    method valorDeAtaque()
 }
 
-class ArmaDeFilo inherits Arma{
-  var property filo     //entre 0 y 1
-  var property longitud //en centimetros
+class ArmaDeFilo{
+  const filo     //entre 0 y 1
+  const longitud //en centimetros
 
-  override method valorDeAtaque(){
+  method valorDeAtaque(){
     return filo * longitud
   }
 
 }
 
-class ArmaContundente inherits Arma{
-  var property peso
+class ArmaContundente {
+  const peso
 
-  override method valorDeAtaque(){
+  method valorDeAtaque(){
     return peso
   } 
 }

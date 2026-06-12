@@ -1,19 +1,23 @@
 import gladiador.*
 
-class Armadura{
-    method puntosDeArmaduraOtorgados()
-}
+object casco{
 
-class Casco inherits Armadura{
-
-    override method puntosDeArmaduraOtorgados(){
+    method puntosDeArmaduraOtorgados(){
         return 10
+    }
+
+    method defensa(luchador) {
+      return 10
     }
 }
 
-class Escudo inherits Armadura{
+object escudo {
 
-    override method puntosDeArmaduraOtorgados(){
+    method puntosDeArmaduraOtorgados(){
         return 5 * (Gladiador.destreza() * 0.10)
+    }
+
+    method defensa(luchador) {
+      return 5 + luchador.destreza()
     }
 }

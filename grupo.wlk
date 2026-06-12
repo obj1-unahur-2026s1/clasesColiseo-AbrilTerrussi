@@ -1,18 +1,15 @@
 class Grupo {
-    var property nombre 
+    const nombre 
     var cantidadPeleas = 0
-    const miembrosGrupo = []
-    var campeonMasFuerte 
+    const miembrosGrupo = #{}
 
-    method campeonFuerte() = campeonMasFuerte
-
-    /*
-    method roundsContra(unAdversario){
-        3.times(self.campeonFuerte())
+    method combatirCon(otroGrupo){
+        self.campeon().pelear(otroGrupo).campeon()
+        self.campeon().pelear(otroGrupo).campeon()
+        self.campeon().pelear(otroGrupo).campeon()
         cantidadPeleas = cantidadPeleas + 1
-
     }
-    */
+
     method agregarMiembro(unGladiador){
         miembrosGrupo.add(unGladiador)
     }
@@ -20,19 +17,17 @@ class Grupo {
         miembrosGrupo.remove(unGladiador)
     }
 
-    method elegirCampeon(unGladiador){
-        if (self.esCampeonMasFuerte(unGladiador) && unGladiador.vida() >= 1){
-            campeonMasFuerte = unGladiador
-        }
+
+    method campeon(){
+        return self.puedenCombatir().max({m=> m.poderDeAtaque()})
     }
 
-
-    method campeonDeMasFuerza(){
-        return miembrosGrupo.max({m=> m.fuerza()})
+    method puedenCombatir(){
+        return miembrosGrupo.filter({m=> m.vida()> 0})
     }
 
     method esCampeonMasFuerte(unGladiador){
-        return unGladiador.fuerza() >= self.campeonDeMasFuerza()
+        return unGladiador.fuerza() >= self.campeon()
     }
 
 

@@ -3,7 +3,7 @@ import arma.*
 class Gladiador {
     var vida = 100 
 
-
+    method vida() = vida
     method atacar(unGladiador){
         unGladiador.perderVida(self.poderDeAtaque() - unGladiador.defensa())
     }
@@ -50,7 +50,12 @@ class Mirmillon inherits Gladiador{
     }
 
     override method crearGrupoCon(compañero){
-        Grupo.nombre() == "mirmillolandia"
+        return
+        new Grupo(nombre = "Mirmillolandia", miembrosGrupo = (self, compañero))
+        /*
+        nuevoGrupo.agregarMiembro(self)
+        nuevoGrupo.agregarMimebro(compañero)
+        return nuevoGrupo*/
     }
 
 }
@@ -80,7 +85,7 @@ class Dimachaerus inherits Gladiador{
     }
 
     override method crearGrupoCon(compañero){
-        Grupo.nombre() == "D" + 
-        (self.poderDeAtaque() + compañero.poderDeAtaque()).toString()
+        return new Grupo (nombre = " D -" + (self.poderDeAtaque() + compañero.poderDeAtaque()).toString(), 
+                        miembrosGrupo = #(self, compañero))
     }
 }

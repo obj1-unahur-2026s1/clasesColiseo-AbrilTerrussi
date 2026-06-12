@@ -12,8 +12,10 @@ class Gladiador {
         vida = vida - cantidad
     }
 
-    method contraAtaque(unGladiador){
+    method pelear(unGladiador){
+        self.atacar(unGladiador)
         unGladiador.atacar()
+        
     }
     method poderDeAtaque()
     method defensa()
@@ -73,7 +75,8 @@ class Dimachaerus inherits Gladiador{
     }
 
     override method atacar(unGladiador){
-        self.defensa() + 1
+        super(unGladiador)
+        destreza = destreza + 1
     }
 
     override method crearGrupoCon(compañero){

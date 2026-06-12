@@ -1,9 +1,7 @@
 import grupo.*
 import arma.*
 class Gladiador {
-    var property vida = 100 
-    var arma 
-    var property fuerza 
+    var vida = 100 
     var dañoCausado
     var gladiadorAtacado 
 
@@ -31,14 +29,16 @@ class Gladiador {
     method crearGrupoCon(comapñero)
 }
 
-class Mirmillones inherits Gladiador{ 
+class Mirmillon inherits Gladiador{ 
     var armadura
+    var arma
+    var fuerza
 
     override method armaActual(unArma) {
         arma = ArmaDeFilo
     }
 
-    override method fuerza(){
+    method fuerza(){
         return fuerza
     }
 
@@ -57,10 +57,6 @@ class Mirmillones inherits Gladiador{
         return arma.valorDeAtaque() + self.fuerza()
     }
 
-    override method defensa(){
-        return armadura.puntosDeArmaduraOtorgados() + self.destreza()
-    }
-
     override method crearGrupoCon(compañero){
         Grupo.nombre() == "mirmillolandia"
     }
@@ -73,7 +69,7 @@ class Dimachaerus inherits Gladiador{
         armas.add(unArma)
     }
 
-    override method fuerza (){
+    method fuerza (){
         return 10
     }
 

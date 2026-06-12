@@ -1,9 +1,11 @@
-import example.pepita
+import gladiador.*
+import arma.*
+import coliseo.*
+import armadura.*
 
-describe "group of tests for pepita" {
+describe "test del coliseo" {
+  test ""{
 
-  test "pepita has initial energy" {
-    assert.equals(100, pepita.energy())
   }
 
 }

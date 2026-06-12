@@ -12,7 +12,7 @@ class Gladiador {
         vida = vida - cantidad
     }
 
-    method pelear(unGladiador){
+    method pelearCon(unGladiador){
         self.atacar(unGladiador)
         unGladiador.atacar()
         
@@ -22,6 +22,10 @@ class Gladiador {
     method destreza()
 
     method crearGrupoCon(comapñero)
+
+    method curar() {
+        vida = 100
+    }
 }
 
 class Mirmillon inherits Gladiador{ 

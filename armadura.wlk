@@ -10,6 +10,6 @@ object casco{
 object escudo {
 
     method defensa(luchador) {
-      return 5 + luchador.destreza()
+      return 5 + luchador.destreza() * 0.1
     }
 }

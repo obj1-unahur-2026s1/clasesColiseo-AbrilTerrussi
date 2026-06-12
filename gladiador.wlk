@@ -14,10 +14,6 @@ class Gladiador {
         gladiadorAtacado = unGladidador
     }
     
-    method arma() = arma
-    method armaActual(unArma) {
-        arma = unArma
-    }
 
     method contraAtaque(){
         gladiadorAtacado.atacar()
@@ -32,19 +28,12 @@ class Gladiador {
 class Mirmillon inherits Gladiador{ 
     var armadura
     var arma
-    var fuerza
+    var property fuerza
 
-    override method armaActual(unArma) {
-        arma = ArmaDeFilo
+    method cambiarArma(unArma) {
+        arma = unArma
     }
 
-    method fuerza(){
-        return fuerza
-    }
-
-    method cambiarFuerza(valor){
-        fuerza = valor
-    }
     override method destreza (){
         return 15
     }
@@ -65,8 +54,8 @@ class Mirmillon inherits Gladiador{
 class Dimachaerus inherits Gladiador{
     const armas = []
 
-    override method armaActual(unArma){
-        armas.add(unArma)
+    method agrgarArma(unArma) {
+        armas.add(unArmas)
     }
 
     method fuerza (){

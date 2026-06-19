@@ -19,6 +19,7 @@ class ArmaContundente {
   method valorDeAtaque(){
     return peso
   } 
+  //prueba1s
 }
 
 
